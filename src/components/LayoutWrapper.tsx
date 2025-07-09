@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar";
 
 type LayoutWrapperProps = {
   children: React.ReactNode
@@ -5,8 +6,11 @@ type LayoutWrapperProps = {
 
 function LayoutWrapper({children} : LayoutWrapperProps) {
   return (
-    <div className="p-4 max-w-screen-lg mx-auto">
-      {children}
+    <div className="w-screen, h-screen">
+      <Navbar/>
+      <div className="p-4 max-w-screen-xl mx-auto">
+        {children}
+      </div>
     </div>
   )
 }

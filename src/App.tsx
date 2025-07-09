@@ -1,15 +1,28 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import LayoutWrapper from "@/components/LayoutWrapper"
-import Navbar from "@/components/Navbar"
-import Overview from "./components/sections/Overview"
+import HomePage from "@/pages/HomePage"
 
 function App() {
   return (
-    <main className="w-screen h-screen">
-      <Navbar/>
-      <LayoutWrapper>
-        <Overview/>
-      </LayoutWrapper>
-    </main>
+    <Router>
+      <Routes>
+
+        {/* Home */}
+        <Route
+          path="/"
+          element={
+            <LayoutWrapper>
+              <HomePage/>
+            </LayoutWrapper>
+          }
+        />
+
+        {/* Projects */}
+        {/* Bugs */}
+        {/* Recent Activities */}
+
+      </Routes>
+    </Router>    
   )
 }
 
