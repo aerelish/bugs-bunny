@@ -15,7 +15,7 @@ function SectionLayout({ children, title, label = true }: SectionLayout) {
       {label && (
         <Label
           htmlFor={title}
-          className="capitalize pl-2 pb-4"
+          className="capitalize pl-1 pb-4"
         >
           {title.replace(/-/g, " ")}
         </Label>
