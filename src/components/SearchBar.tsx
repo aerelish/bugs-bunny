@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuItem,
+  // DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
@@ -26,15 +26,15 @@ function SearchBar() {
   }
 
   return (
-    <div className="">
+    <div className="mt-4">
       <form onSubmit={handleSubmit} className="flex gap-2">
         <div className="relative w-full">
           <span className="absolute left-2 top-1/2 -translate-y-1/2 text-muted-foreground text-lg">
-            <IoSearch/>
+            <IoSearch />
           </span>
-          <Input 
-            type="text" 
-            placeholder="Search..." 
+          <Input
+            type="text"
+            placeholder="Search..."
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             className="border pl-8 pr-3 py-1 rounded-md"
@@ -48,15 +48,15 @@ function SearchBar() {
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="mt-1">
             <DropdownMenuLabel className="text-muted-foreground text-sm font-normal">Filter By</DropdownMenuLabel>
-            
+
             <DropdownMenuCheckboxItem
               checked={checked}
-              onCheckedChange={setChecked} 
+              onCheckedChange={setChecked}
               className="flex justify-between items-center"
             >
               <span>Projects</span>
             </DropdownMenuCheckboxItem>
-            
+
             <DropdownMenuCheckboxItem>Bugs</DropdownMenuCheckboxItem>
             <DropdownMenuSeparator />
             <DropdownMenuLabel className="text-muted-foreground text-sm font-normal">Sort By</DropdownMenuLabel>

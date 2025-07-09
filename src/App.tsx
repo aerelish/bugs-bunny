@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import LayoutWrapper from "@/components/LayoutWrapper"
+import MainLayout from "@/components/layouts/MainLayout"
 import HomePage from "@/pages/HomePage"
 
 function App() {
@@ -11,9 +11,9 @@ function App() {
         <Route
           path="/"
           element={
-            <LayoutWrapper>
-              <HomePage/>
-            </LayoutWrapper>
+            <MainLayout>
+              <HomePage />
+            </MainLayout>
           }
         />
 
@@ -22,7 +22,7 @@ function App() {
         {/* Recent Activities */}
 
       </Routes>
-    </Router>    
+    </Router>
   )
 }
 

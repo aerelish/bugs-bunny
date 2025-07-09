@@ -1,17 +1,18 @@
-import SearchBar from "@/components/SearchBar"
-import OverviewSection from "@/components/sections/OverviewSection"
-import RecentActivitySection from "@/components/sections/RecentActivitySection"
+import HomeLayout from "@/components/layouts/HomeLayout"
+import OverviewAndRActivitySection from "@/components/sections/OverviewAndRActivitySection"
 import ProjectSection from "@/components/sections/ProjectSection"
 
 function HomePage() {
   return (
     <>
-      <SearchBar />
-      <div>
-        <OverviewSection />
-        <RecentActivitySection />
-        <ProjectSection />
-      </div>
+      <HomeLayout 
+        leftCol = {
+          <OverviewAndRActivitySection />
+        }
+        rightCol = {
+          <ProjectSection />
+        }
+      />
     </>
   )
 }
