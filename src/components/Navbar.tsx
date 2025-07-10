@@ -11,14 +11,18 @@ import {
   // NavigationMenuViewport,
 } from "@/components/ui/navigation-menu"
 
-const navLinks: {label: string, path: string}[] = [
+const navLinks: { label: string, path: string }[] = [
   {
     label: "Home",
     path: "/",
   },
   {
-    label: "About",
-    path: "/about",
+    label: "Projects",
+    path: "/projects",
+  },
+  {
+    label: "Bugs",
+    path: "/bugs",
   }
 ];
 
@@ -28,11 +32,11 @@ function Navbar() {
       <div className="p-4 max-w-screen-xl mx-auto">
         <NavigationMenu>
           <NavigationMenuList>
-            {navLinks.map((navLink: {label: string, path: string}, index: number) => {
+            {navLinks.map((navLink: { label: string, path: string }, index: number) => {
               return (
                 <NavigationMenuItem>
                   <NavLink
-                    key={index} 
+                    key={index}
                     to={navLink.path}
                   >
                     <NavigationMenuLink>{navLink.label}</NavigationMenuLink>
