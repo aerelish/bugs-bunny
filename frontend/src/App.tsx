@@ -1,9 +1,11 @@
+import ProjectPage from "@/pages/ProjectPage"
+import AppLayout from "./layouts/AppLayout"
 
 function App() {
   return (
-    <>
-      Hello World
-    </>
+    <AppLayout>
+      <ProjectPage />
+    </AppLayout>
   )
 }
 
