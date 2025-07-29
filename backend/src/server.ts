@@ -1,6 +1,8 @@
+import 'module-alias/register';
 import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
+import apiRoutes from '@/routes/apiRoutes';
 
 const server = express();
 
@@ -15,8 +17,9 @@ server.use(morgan('common'));
 server.use(express.json());
 
 /**
- * * Routes
+ * * API Routes
  */
+server.use('/api', apiRoutes)
 
 /**
  * * Start Server
