@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es2022",             // Or a newer ECMAScript version like "esnext"
+    "module": "node16",             // Or "commonjs", "node16", "nodenext" depending on your environment
+    "moduleResolution": "node16",   // Or "node16", "nodenext" for Node.js environments
+    "outDir": "./dist",
+    "strict": true,
+    "esModuleInterop": true,        // Enables better interoperability with CommonJS modules
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]                // This maps the alias "@" to the root of your project.
+    }
+  },
+  "include": [
+    "src/**/*.ts"                   // Adjust to your source file location
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
