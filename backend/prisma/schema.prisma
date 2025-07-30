@@ -39,8 +39,8 @@ model Bug {
   status      String
   tags        Tag[]
 
-  Project   Project? @relation(fields: [projectId], references: [id])
-  projectId Int?
+  Project   Project @relation(fields: [projectId], references: [id])
+  projectId Int
 
   createdAt DateTime @default(now())
   updateAt  DateTime @updatedAt
@@ -53,8 +53,8 @@ model Task {
   status      String
   tags        Tag[]
 
-  Project   Project? @relation(fields: [projectId], references: [id])
-  projectId Int?
+  Project   Project @relation(fields: [projectId], references: [id])
+  projectId Int
 
   createdAt DateTime @default(now())
   updateAt  DateTime @updatedAt

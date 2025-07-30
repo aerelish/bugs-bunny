@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import prisma  from '../../db/prismaClient';
-import getErrorMessage from '../../utils/getErrorMessage';
+import handleError from '../../utils/handleError';
 
 export default async function createProject(req: Request, res: Response) {
 
@@ -17,19 +17,13 @@ export default async function createProject(req: Request, res: Response) {
         name,
         description,
         link
-      },
-      select: {
-        name: true,
-        description: true,
-        link: true
       }
     })
 
     res.json(project)
 
   } catch (error) {
-    console.error(getErrorMessage(error));
-    res.status(500).json({ message: 'Internal server error' });  
+    handleError(error, res);
   }
 
 }
