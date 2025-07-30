@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import prisma  from '@/db/prismaClient';
-import getErrorMessage from '@/utils/getErrorMessage';
+import prisma  from '../../db/prismaClient';
+import getErrorMessage from '../../utils/getErrorMessage';
 
 export default async function createProject(req: Request, res: Response) {
 

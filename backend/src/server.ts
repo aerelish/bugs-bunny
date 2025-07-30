@@ -1,8 +1,7 @@
-import 'module-alias/register';
 import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
-import apiRoutes from '@/routes/apiRoutes';
+import apiRoutes from './routes/apiRoutes';
 
 const server = express();
 
