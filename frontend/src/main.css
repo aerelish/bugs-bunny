@@ -1,4 +1,11 @@
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: nord --default, dark --prefersdark;
+  /* themes: nord --default, dark --prefersdark; */
+  themes: forest --default, nord  --prefersdark;
+}
+
+@theme {
+
+  --color-border-dark:  #3f3f46;
+
 }

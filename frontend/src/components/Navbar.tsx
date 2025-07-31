@@ -1,7 +1,7 @@
 
 function Navbar() {
   return (
-    <div className="navbar bg-base-100 shadow-sm">
+    <div className="navbar border-b-1 border-border-dark">
       <div className="px-4 w-full max-w-screen mx-auto flex justify-between items-center">
         <div className="flex gap-2">
           {/* <a className="btn btn-ghost text-xl">bugs-bunny</a>

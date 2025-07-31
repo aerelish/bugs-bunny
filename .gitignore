@@ -19,5 +19,8 @@ local.db
 # Test coverage
 /coverage
 
+# Ignore nested git repos (accidental git init inside subfolders)
+**/.git
+
 # Backup
 _back

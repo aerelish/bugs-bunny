@@ -7,11 +7,10 @@ const server = express();
 
 const PORT = process.env.PORT || 3000;
 
-server.use(cors()); // ! change this for production
-
 /**
  * * Middlewares
  */
+server.use(cors()); // ! change this for production
 server.use(morgan('common'));
 server.use(express.json());
 
