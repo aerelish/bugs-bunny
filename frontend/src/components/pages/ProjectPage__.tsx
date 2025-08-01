@@ -27,7 +27,7 @@ function ProjectPage() {
   }, []);
 
   return (
-    <div className="h-full flex w-full">
+    <div className="h-full w-full flex">
 
       {/* Sidebar Section */}
       <div className="flex-1/5 border-r-1 border-border-dark py-4 h-full">
@@ -35,9 +35,18 @@ function ProjectPage() {
         {/* Header */}
         <div className="flex justify-between items-center px-8">
           <h1 className="text-2xl font-semibold">Projects</h1>
-          <button className="btn btn-circle">
-            <Plus strokeWidth={2.5} />
-          </button>
+
+          <div className="dropdown dropdown-start">
+            <button tabIndex={0} role='button' className="btn btn-circle bg-secondary text-base-100">
+              <Plus strokeWidth={2.5} />
+            </button>
+            <ul tabIndex={0} className="mt-1 dropdown-content menu bg-secondary rounded-box z-1 w-48 p-2 shadow-sm text-md text-base-300">
+              <li><a className='hover:bg-neutral hover:text-white'>Report a Bug</a></li>
+              <li><a className='hover:bg-neutral hover:text-white'>Create a New Task</a></li>
+              <li><a className='hover:bg-neutral hover:text-white'>Create a New Project</a></li>
+            </ul>
+          </div>
+
         </div>
 
         {/* Project List */}
@@ -71,10 +80,10 @@ function ProjectPage() {
           <h1 className="text-4xl font-semibold p-4 items-center">{selectedProject.name}</h1>
           <div
             role="tablist"
-            className="w-full tabs tabs-border border-b-1 border-border-dark pt-1 px-1"
+            className="w-full tabs tabs-border border-b border-border-dark pt-1"
           >
-            <a role="tab" className="tab">Overview</a>
-            <a role="tab" className="tab tab-active text-primary border-primary hover:text-primary hover:border-primary">Board</a>
+            <a role="tab" className="tab tab-active">Overview</a>
+            <a role="tab" className="tab">Board</a>
             <a role="tab" className="tab">Bugs</a>
             <a role="tab" className="tab">Tasks</a>
           </div>

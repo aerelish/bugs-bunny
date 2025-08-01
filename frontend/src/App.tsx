@@ -1,10 +1,13 @@
-import ProjectPage from "@/pages/ProjectPage"
-import AppLayout from "./layouts/AppLayout"
+import { Routes, Route } from "react-router-dom";
+import ProjectPage from "@/components/pages/ProjectPage";
+import AppLayout from "@/components/layouts/AppLayout";
 
 function App() {
   return (
     <AppLayout>
-      <ProjectPage />
+      <Routes>
+        <Route path="/" element={<ProjectPage />} />
+      </Routes>
     </AppLayout>
   )
 }
