@@ -1,36 +1,24 @@
-import { useEffect, useState } from 'react';
+import cn from '@/utils/cn';
 import { type Project } from '@/lib/types';
-import getProjects from '@/services/project/getProjects';
 
-function DisplaySection() {
+type DisplaySectionProps = {
+  className?: string,
+  header: string | undefined,
+  selectedItem: Project | null,
+}
 
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [, setProjects] = useState<Project[] | null>(null);
-
-  useEffect(() => {
-
-    const fetchData = async () => {
-      const response = await getProjects();
-      if (response.success) {
-        setProjects(response.data || []);
-        if (response.data && response.data.length > 0) {
-          setSelectedProject(response.data[0]); // set the first project as selected by default
-        }
-      } else {
-        console.error(response.error || 'Failed to fetch projects...');
-      };
-    };
-
-    fetchData();
-
-  }, []);
+function DisplaySection({
+  className,
+  header,
+  selectedItem
+}: DisplaySectionProps) {
 
   return (
     <>
       {/* Display Section */}
-      {selectedProject ? (
-        <div className="flex-4/5">
-          <h1 className="text-4xl font-semibold p-4 items-center">{selectedProject.name}</h1>
+      {selectedItem ? (
+        <div className={className}>
+          <h1 className="text-4xl font-semibold p-4 items-center">{header}</h1>
           <div
             role="tablist"
             className="w-full tabs tabs-border border-b border-border-dark pt-1"
@@ -42,7 +30,7 @@ function DisplaySection() {
           </div>
         </div>
       ) : (
-        <div className="flex-4/5 flex items-center justify-center">
+        <div className={cn("flex items-center justify-center", className)}>
           <p className="text-lg">Create New Project</p>
         </div>
       )}
