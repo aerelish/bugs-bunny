@@ -3,7 +3,7 @@
 
 @plugin "daisyui" {
   /* themes: nord --default, dark --prefersdark; */
-  themes: forest --default, nord  --prefersdark;
+  themes: black --default, nord  --prefersdark;
 }
 
 @theme {

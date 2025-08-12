@@ -1,4 +1,5 @@
-import { Plus } from 'lucide-react';
+// import { Plus } from 'lucide-react';
+import cn from '@/utils/cn';
 import { type Project } from '@/lib/types';
 
 type SideBarSectionProps = {
@@ -20,11 +21,11 @@ function SideBarSection({
   return (
     <div className={className}>
       {/* Header */}
-      <div className="flex justify-between items-center px-8">
-        <h1 className="text-2xl font-semibold">{header}</h1>
+      <div className="flex justify-between items-center px-4">
+        <h1 className="uppercase text-2xl font-semibold">{header}</h1>
 
         {/* TODO: move this as another component */}
-        <div className="dropdown dropdown-start">
+        {/* <div className="dropdown dropdown-start">
           <button tabIndex={0} role='button' className="btn btn-circle bg-secondary text-base-100">
             <Plus strokeWidth={2.5} />
           </button>
@@ -33,20 +34,19 @@ function SideBarSection({
             <li><a className='hover:bg-neutral hover:text-white'>Create a New Task</a></li>
             <li><a className='hover:bg-neutral hover:text-white'>Create a New Project</a></li>
           </ul>
-        </div>
+        </div> */}
 
       </div>
 
       {/* List */}
-      <div className='mt-4'>
+      <div className='mt-4 px-4'>
+        <h1 className='pb-2 tracking-widest text-gray-500'>FAVORITES</h1>
         {listItems ? (
-
           <ul>
             {listItems.map((listItem) => (
-
               <li
                 key={listItem.id}
-                className={`py-2 px-6 cursor-pointer hover:text-base-300 hover:bg-primary rounded-l-4xl ${selectedItem?.id === listItem.id && "border-r-4 border-primary"}`}
+                className={cn("py-2 px-4 cursor-pointer rounded-sm hover:text-white hover:bg-primary ", selectedItem?.id === listItem.id && "font-bold")}
                 onClick={(event) => {
                   event.preventDefault();
                   setSelectedItem(listItem);
@@ -57,7 +57,6 @@ function SideBarSection({
             ))}
 
           </ul>
-
         ) : (
           <p className="mt-4">Loading...</p>
         )}
