@@ -14,7 +14,7 @@ function SideBarSection({
   header,
   listItems,
   selectedItem,
-  setSelectedItem
+  setSelectedItem,
 }: SideBarSectionProps) {
 
   return (
@@ -23,6 +23,7 @@ function SideBarSection({
       <div className="flex justify-between items-center px-8">
         <h1 className="text-2xl font-semibold">{header}</h1>
 
+        {/* TODO: move this as another component */}
         <div className="dropdown dropdown-start">
           <button tabIndex={0} role='button' className="btn btn-circle bg-secondary text-base-100">
             <Plus strokeWidth={2.5} />
@@ -39,7 +40,8 @@ function SideBarSection({
       {/* List */}
       <div className='mt-4'>
         {listItems ? (
-          <ul className="text-lg ml-2">
+
+          <ul>
             {listItems.map((listItem) => (
 
               <li
@@ -53,9 +55,11 @@ function SideBarSection({
               </li>
 
             ))}
+
           </ul>
+
         ) : (
-          <p className="mt-4">Loading projects...</p>
+          <p className="mt-4">Loading...</p>
         )}
       </div>
     </div>

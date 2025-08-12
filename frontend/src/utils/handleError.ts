@@ -1,7 +1,11 @@
 import axios, { type AxiosError } from 'axios';
-import { type ProjectResponse } from '@/lib/types';
 
-export default function handleError(error: unknown): ProjectResponse {
+type ErrorResponse = {
+  success: boolean,
+  error: string
+}
+
+export default function handleError(error: unknown): ErrorResponse {
 
     if (axios.isAxiosError(error)) {
       

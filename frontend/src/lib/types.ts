@@ -12,6 +12,10 @@ export type ProjectResponse = APIResponse & {
   data?: Project[]
 };
 
+export type BugResponse = APIResponse & {
+  data?: Bug[]
+}
+
 /**
  * * for Schema
  */
@@ -21,6 +25,33 @@ export type Project = {
   name: string
   description?: string
   link?: string
-  createdAt: string
-  updatedAt: string
+  createdAt: Date
+  updatedAt: Date
 };
+
+export type Bug = {
+  id: number
+  title: string
+  description?: string
+  status: string
+  tag: Tag[]
+  createdAt: Date
+  updatedAt: Date
+}
+
+export type Task = {
+  id: number
+  title: string
+  description?: string
+  status: string
+  tag: Tag[]
+  createdAt: Date
+  updatedAt: Date
+}
+
+export type Tag = {
+  id: number
+  name: string
+  createdAt: Date
+  updatedAt: Date
+}
