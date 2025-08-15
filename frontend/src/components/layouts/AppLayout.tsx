@@ -5,6 +5,7 @@ function AppLayout({ children }: { children: React.ReactNode }) {
     <div className="w-screen h-screen flex flex-col">
       <Navbar />
       {children}
+      {/* <Footer /> */}
     </div>
   )
 }

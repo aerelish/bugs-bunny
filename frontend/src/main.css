@@ -1,4 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik+Iso&display=swap');
 @import "tailwindcss";
+
 @plugin "daisyui" {
-  themes: nord --default, dark --prefersdark;
+  /* themes: nord --default, dark --prefersdark; */
+  themes: black --default, nord  --prefersdark;
+}
+
+@theme {
+
+  --color-border-dark:  #3f3f46;
+
+  --font-hero: "Rubik Iso", sans-serif;
+
+}
+
+html, body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.tab {
+  @apply rounded-none;
+}
+
+.tab-active {
+  @apply text-primary border-primary hover:text-primary hover:border-primary;
 }
