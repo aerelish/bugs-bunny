@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom"
+
 const navItems = [
-  { name: 'Dashboard', href: '/dashboard' },
-  { name: 'Projects', href: '/projects' },
-  { name: 'Bugs', href: '/bugs' },
-  { name: 'Tasks', href: '/tasks' },
+  { name: 'Dashboard', href: '/' },
+  { name: 'Projects', href: '/project' },
+  { name: 'Bugs', href: '/bug' },
+  { name: 'Tasks', href: '/task' },
 ]
 
 function Navbar() {
@@ -16,11 +18,11 @@ function Navbar() {
       <div className="ml-4 flex-4/5 flex justify-between items-center">
 
         {/* Navigation Items */}
-        <ul className="flex gap-8 pt-2 items-center">
+        <nav className="flex gap-8 pt-2 items-center">
           {navItems.map((item) => (
-            <li><a className="uppercase cursor-pointer">{item.name}</a></li>
+            <Link to={item.href} className="uppercase cursor-pointer">{item.name}</Link>
           ))}
-        </ul >
+        </nav >
 
         {/* Utilities */}
         {/* <div className="flex items-center gap-2">

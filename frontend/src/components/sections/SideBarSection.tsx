@@ -1,4 +1,4 @@
-// import { Plus } from 'lucide-react';
+import { Plus } from 'lucide-react';
 import cn from '@/utils/cn';
 import { type Project } from '@/lib/types';
 
@@ -25,7 +25,7 @@ function SideBarSection({
         <h1 className="uppercase text-2xl font-semibold">{header}</h1>
 
         {/* TODO: move this as another component */}
-        {/* <div className="dropdown dropdown-start">
+        <div className="dropdown dropdown-start">
           <button tabIndex={0} role='button' className="btn btn-circle bg-secondary text-base-100">
             <Plus strokeWidth={2.5} />
           </button>
@@ -34,7 +34,7 @@ function SideBarSection({
             <li><a className='hover:bg-neutral hover:text-white'>Create a New Task</a></li>
             <li><a className='hover:bg-neutral hover:text-white'>Create a New Project</a></li>
           </ul>
-        </div> */}
+        </div>
 
       </div>
 
