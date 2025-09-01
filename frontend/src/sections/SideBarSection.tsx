@@ -8,6 +8,7 @@ type SideBarSectionProps = {
   listItems: Project[] | null,
   selectedItem: Project | null,
   setSelectedItem: React.Dispatch<React.SetStateAction<Project | null>>
+  quickAdd?: () => void
 }
 
 function SideBarSection({
@@ -16,16 +17,25 @@ function SideBarSection({
   listItems,
   selectedItem,
   setSelectedItem,
+  quickAdd,
 }: SideBarSectionProps) {
 
   return (
     <div className={className}>
       {/* Header */}
       <div className="flex justify-between items-center px-4">
+
         <h1 className="uppercase text-2xl font-semibold">{header}</h1>
 
+        <button
+          className='p-2 cursor-pointer rounded-md duration-500 ease-in-out hover:bg-gray-500'
+          onClick={() => quickAdd}
+        >
+          <Plus strokeWidth={2} />
+        </button>
+
         {/* TODO: move this as another component */}
-        <div className="dropdown dropdown-start">
+        {/* <div className="dropdown dropdown-start">
           <button tabIndex={0} role='button' className="btn btn-circle bg-secondary text-base-100">
             <Plus strokeWidth={2.5} />
           </button>
@@ -34,7 +44,7 @@ function SideBarSection({
             <li><a className='hover:bg-neutral hover:text-white'>Create a New Task</a></li>
             <li><a className='hover:bg-neutral hover:text-white'>Create a New Project</a></li>
           </ul>
-        </div>
+        </div> */}
 
       </div>
 

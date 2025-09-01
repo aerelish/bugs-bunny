@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { UseMainContext } from "@/context/MainContext";
 import getProjects from '@/services/project/getProjects';
-import SideBarSection from "@/components/sections/SideBarSection";
-import DisplaySection from "@/components/sections/DisplaySection";
+import SideBarSection from "@/sections/SideBarSection";
+import DisplaySection from "@/sections/DisplaySection";
 
 function ProjectPage() {
 
@@ -30,6 +30,10 @@ function ProjectPage() {
     fetchData();
   }, []);
 
+  const addProject = () => {
+
+  }
+
   if (!selectedProject) {
     return (
       <div className="h-full w-full flex items-center justify-center">
@@ -40,6 +44,7 @@ function ProjectPage() {
 
   return (
     <div className="h-full w-full flex">
+      {/* if addProject is called add a condition here to show the add project form instead of sidebar and display */}
       <>
         <SideBarSection
           className="flex-1/5 h-full py-4 border-r-1 border-border-dark"
@@ -47,6 +52,7 @@ function ProjectPage() {
           listItems={projects}
           selectedItem={selectedProject}
           setSelectedItem={setSelectedProject}
+          quickAdd={addProject}
         />
       </>
       <>

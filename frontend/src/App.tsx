@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
-import AppLayout from "@/components/layouts/AppLayout";
-import ProjectPage from "@/components/pages/ProjectPage";
-import BugPage from "@/components/pages/BugPage";
+import AppLayout from "@/layouts/AppLayout";
+import ProjectPage from "@/pages/ProjectPage";
+import BugPage from "@/pages/BugPage";
 
 function App() {
   return (
