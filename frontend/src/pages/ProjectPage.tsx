@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { UseMainContext } from "@/context/MainContext";
 import getProjects from '@/services/project/getProjects';
 import SideBarSection from "@/sections/SideBarSection";
@@ -12,6 +13,8 @@ function ProjectPage() {
     selectedProject,
     setSelectedProject
   } = UseMainContext();
+
+  const navigate = useNavigate();
 
   // ? can I move this to the MainContext instead?
   useEffect(() => {
@@ -29,10 +32,6 @@ function ProjectPage() {
 
     fetchData();
   }, []);
-
-  const addProject = () => {
-
-  }
 
   if (!selectedProject) {
     return (
@@ -52,7 +51,7 @@ function ProjectPage() {
           listItems={projects}
           selectedItem={selectedProject}
           setSelectedItem={setSelectedProject}
-          quickAdd={addProject}
+          quickAdd={() => navigate('/project/new')}
         />
       </>
       <>

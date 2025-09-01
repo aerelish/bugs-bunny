@@ -27,12 +27,14 @@ function SideBarSection({
 
         <h1 className="uppercase text-2xl font-semibold">{header}</h1>
 
-        <button
-          className='p-2 cursor-pointer rounded-md duration-500 ease-in-out hover:bg-gray-500'
-          onClick={() => quickAdd}
-        >
-          <Plus strokeWidth={2} />
-        </button>
+        {quickAdd &&
+          <button
+            className='p-2 cursor-pointer rounded-md duration-500 ease-in-out hover:bg-gray-500'
+            onClick={() => quickAdd()}
+          >
+            <Plus strokeWidth={2} />
+          </button>
+        }
 
         {/* TODO: move this as another component */}
         {/* <div className="dropdown dropdown-start">

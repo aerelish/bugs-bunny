@@ -19,8 +19,8 @@ function Navbar() {
 
         {/* Navigation Items */}
         <nav className="flex gap-8 pt-2 items-center">
-          {navItems.map((item) => (
-            <Link to={item.href} className="uppercase cursor-pointer">{item.name}</Link>
+          {navItems.map((item, key) => (
+            <Link key={key} to={item.href} className="uppercase cursor-pointer">{item.name}</Link>
           ))}
         </nav >
 
