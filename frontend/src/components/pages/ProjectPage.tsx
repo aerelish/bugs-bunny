@@ -13,6 +13,7 @@ function ProjectPage() {
     setSelectedProject
   } = UseMainContext();
 
+  // ? can I move this to the MainContext instead?
   useEffect(() => {
     const fetchData = async () => {
       const response = await getProjects();
