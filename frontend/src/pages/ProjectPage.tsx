@@ -7,14 +7,14 @@ import DisplaySection from "@/sections/DisplaySection";
 
 function ProjectPage() {
 
+  const navigate = useNavigate();
+
   const {
     projects,
     setProjects,
     selectedProject,
     setSelectedProject
   } = UseMainContext();
-
-  const navigate = useNavigate();
 
   // ? can I move this to the MainContext instead?
   useEffect(() => {

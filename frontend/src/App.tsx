@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import AppLayout from "@/layouts/AppLayout";
 import ProjectPage from "@/pages/ProjectPage";
-import CreateProject from "@/pages/CreateProject";
+import CreateProject from "@/pages/CreateProjectPage";
 import BugPage from "@/pages/BugPage";
 
 function App() {

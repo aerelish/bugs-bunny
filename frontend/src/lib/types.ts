@@ -2,7 +2,7 @@
  * * for API related types
  */
 
-type APIResponse = {
+export type APIResponse = {
   success: boolean
   status?: number
   error?: string
