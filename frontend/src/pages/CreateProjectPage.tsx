@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import type { SubmitHandler } from "react-hook-form";
 import { type Project } from "@/lib/types";
-import CreateForm, { type CreateFormPropsType } from "@/components/CreateForm"
+import CreateForm, { type CreateFormPropsType } from "@/components/form/CreateForm"
 import createProject from "@/services/project/createProject";
 import { UseMainContext } from "@/context/MainContext";
 

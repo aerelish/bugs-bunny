@@ -21,6 +21,7 @@ function DisplaySection({
           <a role="tab" className="tab">Board</a>
           <a role="tab" className="tab">Bugs</a>
           <a role="tab" className="tab">Tasks</a>
+          <a role="tab" className="tab">Settings</a>
         </div>
       </div>
     </>
