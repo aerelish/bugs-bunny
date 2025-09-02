@@ -1,3 +1,23 @@
+import { useState } from "react";
+import cn from "@/utils/cn";
+import BugPage from "@/pages/BugPage";
+import TaskPage from "@/pages/TaskPage";
+import SettingsPage from "@/pages/SettingsPage";
+
+const tabItems = [
+  { name: 'Overview', value: 'overview' },
+  { name: 'Board', value: 'board' },
+  { name: 'Bugs', value: 'bugs' },
+  { name: 'Tasks', value: 'tasks' },
+  { name: 'Setting', value: 'settings' },
+]
+
+const componentMap: Record<string, React.FC> = {
+  bugs: BugPage,
+  tasks: TaskPage,
+  settings: SettingsPage,
+};
+
 type DisplaySectionProps = {
   className?: string,
   header: string | undefined,
@@ -8,6 +28,10 @@ function DisplaySection({
   header,
 }: DisplaySectionProps) {
 
+  const [active, setActive] = useState('overview'); // setting overview as default
+
+  const ActiveComponent = componentMap[active];
+
   return (
     <>
       {/* Display Section */}
@@ -17,12 +41,18 @@ function DisplaySection({
           role="tablist"
           className="w-full tabs tabs-border border-b border-border-dark pt-1"
         >
-          <a role="tab" className="tab tab-active">Overview</a>
-          <a role="tab" className="tab">Board</a>
-          <a role="tab" className="tab">Bugs</a>
-          <a role="tab" className="tab">Tasks</a>
-          <a role="tab" className="tab">Settings</a>
+          {tabItems.map((tabItem, key) => (
+            <a
+              role="tab"
+              key={key}
+              className={cn("tab", active === tabItem.value && "tab-active")}
+              onClick={() => setActive(tabItem.value)}
+            >
+              {tabItem.name}
+            </a>
+          ))}
         </div>
+        {ActiveComponent && <ActiveComponent />}
       </div>
     </>
   )
