@@ -1,13 +1,9 @@
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import cn from '@/utils/cn';
 import { UseMainContext } from "@/context/MainContext";
 import getProjects from '@/services/project/getProjects';
-import SideBarSection from "@/sections/SideBarSection";
-import DisplaySection from "@/sections/DisplaySection";
 
 function ProjectPage() {
-
-  const navigate = useNavigate();
 
   const {
     projects,
@@ -43,8 +39,40 @@ function ProjectPage() {
 
   return (
     <div className="h-full w-full flex">
-      {/* if addProject is called add a condition here to show the add project form instead of sidebar and display */}
-      <>
+
+      <div className="">
+
+        <h1 className='pb-2 tracking-widest text-gray-500'>FAVORITES</h1>
+
+        {projects ?
+          (
+            <ul>
+              {projects.map((project) => (
+                <li
+                  key={project.id}
+                  className={cn("py-2 px-4 cursor-pointer rounded-sm hover:text-white hover:bg-primary ", project?.id === project.id && "font-bold")}
+                  onClick={(event) => {
+                    event.preventDefault();
+                    setSelectedProject(project);
+                  }}>
+                  {project.name}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="mt-4">Loading...</p>
+          )
+        }
+
+      </div>
+
+      <div className="">
+
+        <h1 className="text-4xl font-semibold p-4 items-center">{selectedProject.name}</h1>
+
+      </div>
+
+      {/* <>
         <SideBarSection
           className="flex-1/5 h-full py-4 border-r-1 border-border-dark"
           header="Projects"
@@ -59,7 +87,8 @@ function ProjectPage() {
           className="flex-4/5"
           header={selectedProject?.name}
         />
-      </>
+      </> */}
+
     </div>
   )
 }
